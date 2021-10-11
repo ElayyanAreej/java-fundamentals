@@ -19,7 +19,7 @@ System.out.println("I own " + catCount + " " + Pluralize("cat", catCount) + ".")
  int turtleCount = 0;
 System.out.println("I own " + turtleCount + " " + Pluralize("turtle", turtleCount) + ".");
 
-flipNHeads(1);
+flipNHeads(3);
 
 clock();
 
@@ -61,7 +61,7 @@ return word+'s';
 
 public static void flipNHeads(int n){
 
-int headN=n;
+int headN=n;//3
 int countHeadN=0;
 int flip=0;
 
@@ -72,6 +72,7 @@ while(countHeadN<headN){
  if(Math.round(randomNumber)==0)
  {
  System.out.println("tail");
+ countHeadN=0;
  }
  else{
  System.out.println("head");
