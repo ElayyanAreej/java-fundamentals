@@ -12,3 +12,11 @@ returns true or false depending on whether the array contains duplicate values.
 
 * **Arrays of Arrays**
 Given an array of arrays calculate the average value for each array and return the array with the lowest average.
+
+
+## Lab: 03 - Maps
+* **Analyzing Weather Data**
+find the min and max values for temperatures.and find temperature not seen during the month. 
+
+* **Tallying Election**
+accepts a List of Strings representing votes and returns one string to show what got the most votes.
