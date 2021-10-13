@@ -4,6 +4,9 @@
 package basiclibrary;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 public class Library {
     public boolean someLibraryMethod() {
@@ -40,6 +43,26 @@ public class Library {
         for(int i=0;i< arryOfTheLowestAvg.length;i++){
             System.out.print( arryOfTheLowestAvg[i]+" ");
         }
+        System.out.println("");
+
+
+        ////////////////L03
+        analyzingWeatherData(weeklyMonthTemperatures);
+
+        //// Tallying Election tally function
+        ArrayList <String> votes = new ArrayList<String>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = tally(votes);
+        System.out.println(winner + " received the most votes!");
 
     }
 
@@ -97,7 +120,7 @@ public class Library {
 //        value for each array and return the array with the lowest average.
 
     public static int[] lowestArrayAverage(int[][] arrays) {
-        // asuome that it is the lowest one
+        // suppose that it is the lowest one
         int[] subArray=arrays[0];
         double lowestAvg=calculateAverages(subArray);
         int arrIndexForTheLowest=0;
@@ -117,5 +140,71 @@ public class Library {
         return arryOfTheLowestAvg;
     }
 
+////////L03
 
+    public static void analyzingWeatherData(int[][] arr) {
+        int min = arr[0][0];
+        int max = arr[0][0];
+        HashSet<Integer> uniqueTemperatures=new HashSet();
+
+        for (int i = 0; i < arr.length; i++) {/// loop row
+            for (int y = 0; y < arr[i].length; y++) {// loop inside each row(inier arry)
+                if(arr[i][y]>max) {
+                    max=arr[i][y];
+                }
+                if(arr[i][y]<min){
+                    min=arr[i][y];
+                }
+                uniqueTemperatures.add(arr[i][y]);
+                }
+            }
+System.out.println("High:"+max);
+        System.out.println("Low:"+min);
+
+        String neverSawTemperature="Never saw temperature:";  /// to save neverSawTemperature
+        for(int i=min;i<=max;i++){
+            if(!uniqueTemperatures.contains(i)){
+                neverSawTemperature=neverSawTemperature + i + " ";
+            }
+        }
+
+        System.out.println(neverSawTemperature);
+   }
+
+
+//////////////////////////////////////////////////////////////
+   public static String tally(ArrayList<String> ArrList){
+
+       HashSet<String> ParticipantsNames=new HashSet(); /// to save Participants Names
+       HashMap<String,Integer> votesList=new HashMap(); /// to save votes
+
+      for(String item:ArrList){/// map Array list get names
+          ParticipantsNames.add(item);
+      }
+
+      ////initialize HashMap with Participants Names and 0 votes to each one
+       for(String item:ParticipantsNames){/// map Array list get names
+           votesList.put(item,0);
+       }
+
+       for(String item:ArrList){/// map Array list to calc votes
+         int v=votesList.get(item);
+           votesList.put(item,v+1);
+       }
+//       for (String i : votesList.keySet()) {
+//           System.out.println("key: " + i + " value: " + votesList.get(i));
+//       }
+
+       /// map votesList to get winner
+       int maxVotes=0;
+       String winner="";
+       for (String i : votesList.keySet()) {
+           if(votesList.get(i)>maxVotes) {
+               maxVotes=votesList.get(i);
+               winner=i;
+           }
+       }
+
+return winner;
+   }
 }
