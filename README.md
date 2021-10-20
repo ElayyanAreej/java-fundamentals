@@ -1,3 +1,4 @@
+
 # java-fundamentals
 
 ## Lab: 01 - Java primitives and control flow
@@ -32,3 +33,7 @@ find the min and max values for temperatures.and find temperature not seen durin
 
 * **Tallying Election**
 accepts a List of Strings representing votes and returns one string to show what got the most votes.
+
+## Lab: 06 - inheritance 
+contain two classes one for the **restaurants** and another for the **review**
+restaurants class has name, starts ,price category and a multiple reviews that can be added by the review instance.
