@@ -37,3 +37,17 @@ accepts a List of Strings representing votes and returns one string to show what
 ## Lab: 06 - inheritance 
 contain two classes one for the **restaurants** and another for the **review**
 restaurants class has name, starts ,price category and a multiple reviews that can be added by the review instance.
+
+
+## lab: 07 - inheritance part2
+add **shop** class and **theaters** class 
+
+A Shop should have a name, description, and number of dollar signs. constructor, toString method for Shops.
+The users also want to review shops!
+
+A Theater class; a Theater should have a name and all of the movies currently showing there. 
+constructor, toString, addMovie,removeMovie methods
+Theater is just as reviewable as your Restaurant and your Shop.
+Some reviews should now have a String movie instance variable, to hold which movie that reviewer is referencing.
+
+
