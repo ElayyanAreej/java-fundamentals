@@ -2,7 +2,7 @@ package inheritance;
 
 import java.util.ArrayList;
 
-public class Restaurant {
+public class Restaurant implements Places{
     private String name;
     private double stars;
     private String category;
@@ -40,7 +40,7 @@ public class Restaurant {
         this.category = category;
     }
 
-    public String toString(){
+      public String toString(){
         return  this.name + " Restaurant has "+ this.stars + " Stars and the price category "+ this.category;
     }
 
@@ -60,7 +60,7 @@ public class Restaurant {
 
         restaurantReviews.add(r.toString());
         System.out.println(r.toString());
-        System.out.println(this.toString());
+//        System.out.println(this.toString());
     }
 
     public ArrayList viewReview(){

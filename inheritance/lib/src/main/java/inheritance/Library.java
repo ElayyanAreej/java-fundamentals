@@ -20,5 +20,47 @@ public class Library {
 
 
         System.out.println(macRestaurant.viewReview());
+        System.out.println(macRestaurant.toString());
+
+        System.out.println("******************************************************************************");
+
+        Shop firstShop=new Shop("falfool","you will found any thing in your mind ","$",5);
+        System.out.println(firstShop.toString());
+
+        Review shopReview1=new Review("areej",1,"very good ");
+        Review shopReview2=new Review("Yahya",2," good ");
+        Review shopReview3=new Review("yasmeen",2,"very good ");
+
+        firstShop.addReview(shopReview1);
+        firstShop.addReview(shopReview2);
+        firstShop.addReview(shopReview3);
+        System.out.println(firstShop.viewReview());
+        System.out.println(firstShop.toString()+"   "+firstShop.getStars());
+
+        System.out.println("******************************************************************************");
+
+        Theater firstTheater=new Theater("Shams");
+        System.out.println(firstTheater.toString());
+
+        Review theaterReview1=new Review("areej",5,"very good ","movie 1");
+        Review theaterReview2=new Review("Yahya",5," good ","movie 1");
+        Review theaterReview3=new Review("yasmeen",5,"very good ","movie 3");
+
+
+        firstTheater.addReview(theaterReview1);
+        firstTheater.addReview(theaterReview2);
+        firstTheater.addReview(theaterReview3);
+        System.out.println(firstTheater.viewReview());
+        System.out.println(firstTheater.toString());
+
+        firstTheater.addMovie("movie 1");
+        firstTheater.addMovie("movie 2");
+        firstTheater.addMovie("movie 3");
+        System.out.println("movies currently showing there   "+firstTheater.getMovies());
+        firstTheater.removeMovie("movie 2");
+        System.out.println("movies currently showing there after Update  "+firstTheater.getMovies());
+
+
+
     }
 }
